@@ -257,6 +257,8 @@ Finally, the plot is displayed using `plt.show()`.
 
 ### Conclusion
 
+This study focuses on wind speed data collected from the CASEMENT station near Clondalkin in Dublin, spanning the period from 1944 to 2024. Analyzing and manipulating this dataset allows for a comprehensive examination of wind speed characteristics in the region. The analysis shows various temporal scales, including hourly and monthly variations, as well as long-term trends, with the goal of providing insights into past wind patterns and generating predictions for future wind speeds.
+
 First plot demonstrates the daily cycle of wind speed, with peak speeds in the afternoon and lower speeds at night (Wind speeds are generally lower during the night and early morning hours (roughly 0-7) and increase during the late morning and afternoon (roughly 10-17)). However, it also shows that a simple linear relationship doesn't fully capture the complex pattern of wind speed variation throughout the day.
 
 Second plot demonstrates a strong seasonal cycle in wind speed, with higher speeds in the winter and lower speeds in the summer. This pattern is typical in many regions due to differences in atmospheric pressure gradients and weather systems between seasons.
