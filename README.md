@@ -28,7 +28,8 @@ import seaborn as sns
 2.  Loading the Dataset
 
 ```bash
-df = pd.read_csv("hly3723.csv", skiprows=23, low_memory=False)
+url = "https://cli.fusio.net/cli/climate_data/webdata/hly3723.csv"
+df = pd.read_csv(url, skiprows=23, low_memory=False)
 ```
 
 `pd.read_csv()`: Reads a CSV file into a DataFrame.\
@@ -270,13 +271,13 @@ It's predicting a nearly constant future, which is unlikely given the historical
 
 ### References
 
-Met Éireann Climate Averages: Provides annual, seasonal, and monthly average values based on high-quality datasets (Met Éireann).Retrieved November 20, 2024, from `https://www.met.ie/climate/available-data/historical-data`
+Met Éireann Climate Averages: Provides annual, seasonal, and monthly average values based on high-quality datasets (Met Éireann).Retrieved November 28, 2024, from `https://www.met.ie/climate/available-data/historical-data`
 
-Data Cleaning Techniques: Discusses methods for handling missing data and outliers (Codilime 4). Retrieved November 20, 2024, from `https://codilime.com/blog/data-cleaning-techniques/`
+Data Cleaning Techniques: Discusses methods for handling missing data and outliers (Codilime 4). Retrieved November 28, 2024, from `https://codilime.com/blog/data-cleaning-techniques/`
 
-Pandas DateTime Functions. Retrieved November 21, 2024, from `https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html`
+Pandas DateTime Functions. Retrieved November 28, 2024, from `https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html`
 
-Plot Data Types: Overview of many common plotting commands provided by Matplotlib. Retrieved November 21, 2024, from `https://matplotlib.org/stable/plot_types/index.html`
+Plot Data Types: Overview of many common plotting commands provided by Matplotlib. Retrieved November 28, 2024, from `https://matplotlib.org/stable/plot_types/index.html`
 
 Scikit-learn Linear Regression Documentation. Retrieved January 11, 2025, from `https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html`
 
