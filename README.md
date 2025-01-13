@@ -148,3 +148,113 @@ plt.show()
 `plt.ylabel()`: Sets the y-axis label to "Mean Wind Speed".\
 `plt.xticks(ticks=range(0, 12)`: Sets the tick positions to be the integer values from 0 to 11. This represents the months of the year (0 corresponds to January, 1 to February, and so on)./
 `plt.show()`: Displays the plot.
+
+---
+12. Prediction (the next 10 years)
+
+```bash
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+```
+`LinerRegression`: Used for the linear regression model to predict wind speed based on year and monh.\
+`train_test_split`: Splits the data into training and testing sets for model validation.
+
+---
+13. Extracting Year and Month features
+
+```bash
+df['year'] = df.index.year
+df['month'] = df.index.month
+```
+The year and month are extracted from the index of the DataFrame (which is a date column) and stored as new columns in the DataFrame `df`.
+
+---
+14. Grouping Data by Year and Month
+
+```bash
+monthly_mean_wdsp = df.groupby(['year', 'month'])['wdsp'].mean().reset_index()
+```
+The dataset is grouped by year and month.\
+The mean wind speed (wdsp) is calculated for each month of each year.
+
+---
+15. Preparing Features and Target Variables
+
+```bash
+X = monthly_mean_wdsp[['year', 'month']]
+y = monthly_mean_wdsp['wdsp']
+```
+
+`X`: contains the features: year and month.\
+`y`: contains the target variable: mean wind speed (wdsp).
+
+---
+16. Train-Test Split
+
+```bash
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+The data is split into training and testing sets.\
+`test_size=0.2`: means 20% of the data will be used for testing, and 80% for training.\
+`random_state=42`: ensures the split is reproducible.
+
+---
+17. Training the Linear Regression Model
+
+```bash
+model = LinearRegression()
+model.fit(X_train, y_train)
+```
+A LinearRegression model is created and trained using the training data (X_train, y_train).
+
+---
+18. Forecasting for the Next 10 Years
+
+```bash
+future_years = np.arange(monthly_mean_wdsp['year'].max() + 1, monthly_mean_wdsp['year'].max() + 11)
+future_months = np.arange(1, 13)
+future_data = pd.DataFrame([(year, month) for year in future_years for month in future_months], columns=['year', 'month'])
+forecast = model.predict(future_data)
+```
+`future_years`: Creates an array starting from the year after the last historical year to the next 10 years.\
+`future_months`: Generates an array of months from 1 to 12 (representing January to December).\
+`future_data`: A new DataFrame is created with all combinations of future years and months.\
+`forecast`: The model is used to predict the wind speed (wdsp) for the future data (next 10 years).
+
+---
+19. Creating Date Index for Future and Historical Data
+
+```bash
+future_dates = pd.to_datetime(future_data['year'].astype(str) + '-' + future_data['month'].astype(str), format='%Y-%m')
+historical_dates = pd.to_datetime(monthly_mean_wdsp['year'].astype(str) + '-' + monthly_mean_wdsp['month'].astype(str), format='%Y-%m')
+```
+`future_dates`: Converts the year and month columns in future_data to a proper datetime format (YYYY-MM).\
+`historical_dates`: Converts the year and month columns in monthly_mean_wdsp to a datetime format for historical data.
+
+---
+20. Plotting Historical and Forecasted Data
+
+```bash
+plt.figure(figsize=(12, 6))
+plt.plot(historical_dates, monthly_mean_wdsp['wdsp'], label='Historical Data')
+plt.plot(future_dates, forecast, label='Forecasted Data', color='red')
+plt.title("Wind Speed Forecast for the Next 10 Years")
+plt.xlabel("Date")
+plt.ylabel("Mean Wind Speed (wdsp)")
+plt.legend()
+plt.grid(True) # Add a grid for better readability
+plt.tight_layout() # Adjust layout to prevent labels from overlapping
+plt.show()
+```
+
+`plt.plot`: Plots historical data (historical_dates, monthly_mean_wdsp['wdsp']) and forecasted data (future_dates, forecast).
+The title, labels, and legend are added to the plot.
+`plt.grid(True)`: Adds a grid for better readability of the plot.
+`plt.tight_layout()`: Adjusts the layout to prevent overlapping labels.
+Finally, the plot is displayed using `plt.show()`.
+
+---
+
+
+
+
