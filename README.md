@@ -255,6 +255,29 @@ Finally, the plot is displayed using `plt.show()`.
 
 ---
 
+### Conclusion
 
+First plot demonstrates the daily cycle of wind speed, with peak speeds in the afternoon and lower speeds at night (Wind speeds are generally lower during the night and early morning hours (roughly 0-7) and increase during the late morning and afternoon (roughly 10-17)). However, it also shows that a simple linear relationship doesn't fully capture the complex pattern of wind speed variation throughout the day.
 
+Second plot demonstrates a strong seasonal cycle in wind speed, with higher speeds in the winter and lower speeds in the summer. This pattern is typical in many regions due to differences in atmospheric pressure gradients and weather systems between seasons.
 
+Third plot shows the historical data and a forecast, the forecast itself is not very informative. The linear regression model is too simplistic to capture the complexities of wind speed variation. The red line represents the forecasted wind speeds for the next 10 years. The forecast shows a nearly flat, very slightly declining trend.
+It's predicting a nearly constant future, which is unlikely given the historical data. 
+
+### References
+
+Met Éireann Climate Averages: Provides annual, seasonal, and monthly average values based on high-quality datasets (Met Éireann).Retrieved November 20, 2024, from `https://www.met.ie/climate/available-data/historical-data`
+
+Data Cleaning Techniques: Discusses methods for handling missing data and outliers (Codilime 4). Retrieved November 20, 2024, from `https://codilime.com/blog/data-cleaning-techniques/`
+
+Pandas DateTime Functions. Retrieved November 21, 2024, from `https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html`
+
+Plot Data Types: Overview of many common plotting commands provided by Matplotlib. Retrieved November 21, 2024, from `https://matplotlib.org/stable/plot_types/index.html`
+
+Scikit-learn Linear Regression Documentation. Retrieved January 11, 2025, from `https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html`
+
+Scikit-learn Train-Test Split Documentation. Retrieved January 11, 2025, from `https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html`
+
+OpenAI, 2025. ChatGPT. Version 4. Retrieved January 13, 2025, from `https://chat.openai.com`
+
+Google DeepMind, 2025. Gemini AI. Retrieved January 13, 2025, from `https://gemini.google.com/`
