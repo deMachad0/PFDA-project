@@ -264,6 +264,8 @@ Second plot demonstrates a strong seasonal cycle in wind speed, with higher spee
 Third plot shows the historical data and a forecast, the forecast itself is not very informative. The linear regression model is too simplistic to capture the complexities of wind speed variation. The red line represents the forecasted wind speeds for the next 10 years. The forecast shows a nearly flat, very slightly declining trend.
 It's predicting a nearly constant future, which is unlikely given the historical data. 
 
+---
+
 ### References
 
 Met Éireann Climate Averages: Provides annual, seasonal, and monthly average values based on high-quality datasets (Met Éireann).Retrieved November 20, 2024, from `https://www.met.ie/climate/available-data/historical-data`
@@ -281,3 +283,5 @@ Scikit-learn Train-Test Split Documentation. Retrieved January 11, 2025, from `h
 OpenAI, 2025. ChatGPT. Version 4. Retrieved January 13, 2025, from `https://chat.openai.com`
 
 Google DeepMind, 2025. Gemini AI. Retrieved January 13, 2025, from `https://gemini.google.com/`
+
+---
