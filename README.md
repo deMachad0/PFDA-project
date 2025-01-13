@@ -1,7 +1,7 @@
 # Programming for Data Analytics
 
 ## CASEMENT Data Analysis 
-This notebook focuses on manipulating and analyzing data from the following source: Historical Data - Met Eireann - The Irish Meteorological Service).
+This notebook focuses on manipulating and analyzing data from the following source: Historical Data - Met Eireann - The Irish Meteorological Service.
 
 ## Overview
 Objective: Perform data cleaning, transformation, and visualization to gain insights from the Casement weather dataset.
