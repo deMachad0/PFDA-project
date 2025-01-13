@@ -142,3 +142,9 @@ plt.xticks(ticks=range(0, 12), labels=[
 ])
 plt.show()
 ```
+
+`sns.lmplot()`: Creates a linear regression plot for Month vs. wdsp.\
+`plt.xlabel()`: Sets the x-axis label to "Month of Day".\
+`plt.ylabel()`: Sets the y-axis label to "Mean Wind Speed".\
+`plt.xticks(ticks=range(0, 12)`: Sets the tick positions to be the integer values from 0 to 11. This represents the months of the year (0 corresponds to January, 1 to February, and so on)./
+`plt.show()`: Displays the plot.
