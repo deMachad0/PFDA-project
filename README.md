@@ -22,7 +22,7 @@ import seaborn as sns
 `pandas as pd`: Used for data manipulation and analysis.\
 `numpy as np`: Provides support for numerical computations.\
 `matplotlib.pyplot as plt`: Used for creating static, interactive, and animated visualizations in Python.\
-`seaborn as sns`: Built on top of Matplotlib, it provides a high-level interface for drawing attractive statistical graphics.\
+`seaborn as sns`: Built on top of Matplotlib, it provides a high-level interface for drawing attractive statistical graphics.
 
 ---
 2.  Loading the Dataset
@@ -31,8 +31,8 @@ import seaborn as sns
 df = pd.read_csv("hly3723.csv", skiprows=23, low_memory=False)
 ```
 
-`pd.read_csv()`: Reads a CSV file into a DataFrame.
-`skiprows=23`: Skips the first 23 rows of the file (often used to skip metadata or header information).
+`pd.read_csv()`: Reads a CSV file into a DataFrame.\
+`skiprows=23`: Skips the first 23 rows of the file (often used to skip metadata or header information).\
 `low_memory=False`: Prevents mixed data type warnings by processing data in chunks.
 
 ---
@@ -42,9 +42,9 @@ df = pd.read_csv("hly3723.csv", skiprows=23, low_memory=False)
 df['date'] = pd.to_datetime(df['date'], format="%d-%b-%Y %H:%M", errors='coerce', utc=True)
 ```
 
-`pd.to_datetime()`: Converts the date column to a datetime object.
-`format="%d-%b-%Y %H:%M"`: Specifies the date format (e.g., "12-Jan-2023 14:30").
-`errors='coerce'`: Invalid parsing results in NaT (Not a Time).
+`pd.to_datetime()`: Converts the date column to a datetime object.\
+`format="%d-%b-%Y %H:%M"`: Specifies the date format (e.g., "12-Jan-2023 14:30").\
+`errors='coerce'`: Invalid parsing results in NaT (Not a Time).\
 `utc=True`: Ensures the datetime is treated as UTC.
 
 ---
@@ -72,7 +72,7 @@ df['date'] = df['date'].dt.normalize()
 df['wdsp'] = pd.to_numeric(df['wdsp'], errors='coerce')
 ```
 
-`pd.to_numeric()`: Converts the wdsp column to numeric values.
+`pd.to_numeric()`: Converts the wdsp column to numeric values.\
 `errors='coerce'`: Non-numeric values are converted to NaN.
 
 ---
@@ -100,7 +100,7 @@ df.set_index('date', inplace=True)
 hourly_mean_wdsp = df.groupby('Hour')['wdsp'].mean().reset_index()
 ```
 
-`df.groupby('Hour')['wdsp'].mean()`: Groups the data by hour and calculates the mean wind speed for each hour.
+`df.groupby('Hour')['wdsp'].mean()`: Groups the data by hour and calculates the mean wind speed for each hour.\
 `reset_index()`: Resets the index to ensure Hour remains a column in the DataFrame.
 
 ---
@@ -113,7 +113,7 @@ plt.ylabel("Mean Wind Speed")
 plt.show()
 ```
 
-`sns.lmplot()`: Creates a linear regression plot for Hour vs. wdsp.
-`plt.xlabel()`: Sets the x-axis label to "Hour of Day".
-`plt.ylabel()`: Sets the y-axis label to "Mean Wind Speed".
+`sns.lmplot()`: Creates a linear regression plot for Hour vs. wdsp.\
+`plt.xlabel()`: Sets the x-axis label to "Hour of Day".\
+`plt.ylabel()`: Sets the y-axis label to "Mean Wind Speed".\
 `plt.show()`: Displays the plot.
