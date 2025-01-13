@@ -28,7 +28,8 @@ import seaborn as sns
 2.  Loading the Dataset
 
 ```bash
-df = pd.read_csv("hly3723.csv", skiprows=23, low_memory=False)
+url = "https://cli.fusio.net/cli/climate_data/webdata/hly3723.csv"
+df = pd.read_csv(url, skiprows=23, low_memory=False)
 ```
 
 `pd.read_csv()`: Reads a CSV file into a DataFrame.\
