@@ -104,8 +104,19 @@ hourly_mean_wdsp = df.groupby('Hour')['wdsp'].mean().reset_index()
 `reset_index()`: Resets the index to ensure Hour remains a column in the DataFrame.
 
 ---
-10. Plotting the Data
+10. Calculating Monthly Mean Wind Speed
 
+```bash
+monthly_mean_wdsp = df.groupby('Month')['wdsp'].mean().reset_index()
+```
+
+`df.groupby('Month')['wdsp'].mean()`: Groups the data by hour and calculates the mean wind speed for each hour.\
+`reset_index()`: Resets the index to ensure Hour remains a column in the DataFrame.
+
+---
+11. Plotting the Data
+
+Hourly mean wind spped
 ```bash
 sns.lmplot(data=hourly_mean_wdsp, x='Hour', y='wdsp')
 plt.xlabel("Hour of Day")
@@ -117,3 +128,17 @@ plt.show()
 `plt.xlabel()`: Sets the x-axis label to "Hour of Day".\
 `plt.ylabel()`: Sets the y-axis label to "Mean Wind Speed".\
 `plt.show()`: Displays the plot.
+
+Monthly mean wind speed
+```bash
+plt.figure(figsize=(10, 6))
+sns.barplot(data=monthly_mean_wdsp, x='Month', y='wdsp')
+plt.title("Monthly Mean Wind Speed")
+plt.xlabel("Month")
+plt.ylabel("Mean Wind Speed")
+plt.xticks(ticks=range(0, 12), labels=[
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+])
+plt.show()
+```
